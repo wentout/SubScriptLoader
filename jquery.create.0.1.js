@@ -1,5 +1,5 @@
 (function( jQuery, undefined ){
-jQuery.loadSubscript = function( url, scope, thisName, returnCallback ){
+jQuery.loadSubScript = function( url, scope, thisName, returnCallback ){
     var scope = scope || window;
     var thisRef = thisRef || window;
     if( thisRef === true ){ thisRef = namespace; }
