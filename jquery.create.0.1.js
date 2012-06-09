@@ -17,7 +17,7 @@ jQuery.loadSubScript = function( url, scope, thisName, returnCallback ){
                 
             }catch(e){ alert(e); }
         }
-        , error: function(){ alert('Loader Error:\n' + e ); }
+        , error: function(jqXHR, textStatus, errorThrown){ alert('Loader Error:\n' + errorThrown ); }
     } );        
 };
 })( jQuery );
