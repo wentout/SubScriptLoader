@@ -29,6 +29,6 @@ var _create = ( function( undefined ){
                 
             }catch(e){ alert(e); }
         }
-        , error: function(){ alert('Loader Error:\n' + e ); }
+        , error: function(jqXHR, textStatus, errorThrown){ alert('Loader Error:\n' + errorThrown ); }
     } );
 } } );
