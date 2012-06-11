@@ -9,8 +9,7 @@ var _create = ( function( undefined ){
     return this;
 }).call( { load : function( url, scope, thisName, returnCallback ){
     var scope = scope || window;
-    var thisRef = thisRef || window;
-    if( thisRef === true ){ thisRef = namespace; }
+    var thisName = thisName || window;
     
     $.ajax( {
           url: url
