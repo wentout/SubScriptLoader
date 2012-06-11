@@ -14,7 +14,7 @@ var _create = ( function( undefined ){
     
     $.ajax( {
           url: url
-        , type: 'POST'
+        , type: 'GET'
         , dataType: 'text'
         , success: function( data ){
             try{
