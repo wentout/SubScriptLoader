@@ -6,7 +6,7 @@ jQuery.loadSubScript = function( url, scope, thisName, returnCallback ){
     
     $.ajax( {
           url: url
-        , type: 'POST'
+        , type: 'GET'
         , dataType: 'text'
         , success: function( data ){
             try{
