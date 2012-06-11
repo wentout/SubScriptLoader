@@ -18,10 +18,6 @@ var _create = ( function( undefined ){
         , success: function( data ){
             try{
                 
-                // var fns = ( function(){
-                    // return new Function( 'with( this ){ return ' + Function.apply( null, arguments ).toString() + '; }' );
-                // } ).apply( namespace, [ data ] );
-
                 var fns = new Function( 'with( this ){ return ' + Function.apply( null, [ data ] ) + '; }' );
                 fns = fns.call( scope );
                 var turn = fns.call( thisName );
