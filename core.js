@@ -1,14 +1,23 @@
 ( function( undefined ){
     try{
         var _js = window._create.noConflict();
-        var returnCallbackStandalone = function( obj ){
-            alert( 'Standalone Returns: ' + obj );
+        var num = 0;
+        var scope = {
+            info : function( str ){
+                num++;
+                $('#example').html( $('#example').html() + '' + num + '. ' + str + '<br>' );
+            }
         };
         var returnCallbackJQ = function( obj ){
-            alert( 'JQ Loader Plugin Returns: ' + obj );
+            scope.info( obj );
         };
-        _js.load( './test.js', { bb: 123 }, { bb:456 }, returnCallbackStandalone );
-        $.loadSubScript( './test.js', { bb: 123 }, { bb:456 }, returnCallbackJQ );
+        var returnCallbackStandalone = function( obj ){
+            $.loadSubScript( './test.js', scope, { name: 'My Scope Name came from $.loadSubScript.' }, returnCallbackJQ );
+        };
+
+        window.setTimeout( function(){
+            _js.load( './test.js', scope, { name: 'My Scope Name came from _js.load.' }, returnCallbackStandalone );
+        }, 300 );
     
     }catch(e){ alert(e); }
 })();
