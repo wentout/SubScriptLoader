@@ -1,5 +1,12 @@
 return (function(){
-    alert( bb );
-    alert( this.bb );
-    return 789;
+    
+    ( function( name ){
+        window.setTimeout( function(){
+            info( 'Hello!' );
+            info( name );
+        } , 500 );
+    } )( this.name );
+    
+    return '<strong>This is Sparta!</strong>';
+    
 }).call( this );
